@@ -39,6 +39,7 @@ namespace xUnit.Tests.Controllers
         //Act
          string result = _controller.Index(guessedNumber);
 
+         //Assert
          Assert.Equal(result,expectedResult);
 
         }
@@ -55,8 +56,30 @@ namespace xUnit.Tests.Controllers
             int guessedNumber = 122;
             string expectedResult = "wrong ! Try a smaller number";
 
+            //Act
             string result = _controller.Index(guessedNumber);
 
+            //Assert
+            Assert.Equal(result, expectedResult);
+
+        }
+
+        [Fact]
+        public void HomeController_Index_ValidLargeNumberResultWithoutEmailAndPrintService()
+        {
+            //Arrange
+
+            _printerService.Setup(x => x.IsPrintAvailable()).Returns(false);
+            _emailService.Setup(x => x.EmailExists()).Returns(false);
+
+
+            int guessedNumber = 122;
+            string expectedResult = "wrong ! Try a smaller number";
+
+            //Act
+            string result = _controller.Index(guessedNumber);
+
+            //Assert
             Assert.Equal(result, expectedResult);
 
         }
@@ -73,8 +96,10 @@ namespace xUnit.Tests.Controllers
             int guessedNumber =21 ;
             string expectedResult = "wrong ! Try a bigger number";
 
+            //Act
             string result = _controller.Index(guessedNumber);
 
+            //Assert
             Assert.Equal(result, expectedResult);
 
         }
@@ -90,9 +115,11 @@ namespace xUnit.Tests.Controllers
 
             int guessedNumber = 1;
             string expectedResult = "wrong ! Try a bigger number";
-
+            
+            //Act
             string result = _controller.Index(guessedNumber);
 
+            //Assert
             Assert.Equal(result, expectedResult);
 
         }
@@ -109,8 +136,10 @@ namespace xUnit.Tests.Controllers
             int guessedNumber = 100;
             string expectedResult = "correct ! you guessed the number";
 
+            //Act
             string result = _controller.Index(guessedNumber);
 
+            //Assert
             Assert.Equal(result, expectedResult);
 
         }
@@ -128,8 +157,10 @@ namespace xUnit.Tests.Controllers
             int guessedNumber = 100;
             string expectedResult = "correct ! you guessed the number";
 
+            //Act
             string result = _controller.Index(guessedNumber);
 
+            //Assert
             Assert.Equal(result, expectedResult);
 
         }
