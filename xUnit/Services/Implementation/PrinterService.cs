@@ -4,12 +4,13 @@ namespace xUnit.Services.Implementation
 {
     public class PrinterService : IPrinterService
     {
-        public bool Print()
+
+        bool IPrinterService.IsPrintAvailable()
         {
             throw new NotImplementedException();
         }
 
-        public bool IsPrintAvailable()
+        void IPrinterService.Print()
         {
             throw new NotImplementedException();
         }

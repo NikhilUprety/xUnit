@@ -3,6 +3,6 @@
     public interface IEmailService
     {
         bool EmailExists(); 
-        bool SendEmail();
+        void SendEmail();
     }
 }

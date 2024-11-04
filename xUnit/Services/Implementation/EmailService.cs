@@ -6,10 +6,10 @@ namespace xUnit.Services.Implementation
     {
         public bool EmailExists()
         {
-            throw new NotImplementedException();
+            return true;
         }
 
-        public bool SendEmail()
+        public void SendEmail()
         {
             throw new NotImplementedException();
         }

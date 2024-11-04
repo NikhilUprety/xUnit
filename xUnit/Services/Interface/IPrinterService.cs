@@ -3,7 +3,7 @@
     public interface IPrinterService
     {
         bool IsPrintAvailable(); 
-        bool  Print();
+        void  Print();
 
     }
 }
